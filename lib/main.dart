@@ -59,7 +59,10 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             padding: EdgeInsets.all(5),
             child: allmessages == null
-                ? Center(child: CircularProgressIndicator())
+                ? Center(
+                    child: CircularProgressIndicator(
+                    color: Colors.deepOrangeAccent,
+                  ))
                 : Column(
                     children: allmessages.map((messageone) {
                     return Container(
