@@ -31,16 +31,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void getAllMessages() {
-    Future.delayed(Duration.zero, () async {
+    Future.delayed(const Duration(milliseconds: 500), () async {
       List<SmsMessage> messages = await query.querySms(
-        //querySms is from sms package
         kinds: [SmsQueryKind.Inbox, SmsQueryKind.Sent, SmsQueryKind.Draft],
-        //filter Inbox, sent or draft messages
-        count: 1000, //number of sms to read
+        count: 1000,
       );
 
       setState(() {
-        //update UI
         allmessages = messages;
       });
     });
